@@ -22,3 +22,7 @@
 The easiest way to deploy this Bot is via Heroku.
 
 <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/heyaaman/PhoenixCollosus"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+
+
+##✨ Railways deploy ✨
+[![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/heyaaman/PhoenixCollosus=API_ID,API_HASH,BOT_TOKEN,DATABASE_URL,OWNER_ID,OWNER_USERNAME,SUPPORT_CHAT,EVENT_LOGS,JOIN_LOGGER,CASH_API_KEY,TIME_API_KEY,DEV_USERS,sw_api,STRICT_GBAN,DRAGONS,DEMONS,TIGERS,WOLVES,ENV,No_LOAD,BL_CHATS,ALLOW_EXCL,DONATION_LINK,DEL_CMDS,)
