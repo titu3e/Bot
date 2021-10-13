@@ -2346,6 +2346,33 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
+__mod_name__ = "Feds"
+
+from innexiaBot.modules.language import gs
+
+def fed_owner_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        gs(update.effective_chat.id, "FED_OWNER_HELP"),
+        parse_mode=ParseMode.MARKDOWN,
+    )
+
+
+def fed_admin_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        gs(update.effective_chat.id, "FED_ADMIN_HELP"),
+        parse_mode=ParseMode.MARKDOWN,
+    )
+
+
+
+def fed_user_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        gs(update.effective_chat.id, "FED_USER_HELP"),
+        parse_mode=ParseMode.MARKDOWN,
+    )
+
+
+
 @run_async
 def fed_help(update: Update, context: CallbackContext):
     query = update.callback_query
