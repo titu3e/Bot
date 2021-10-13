@@ -5,18 +5,7 @@ import re
 import time
 import uuid
 from io import BytesIO
-from telegram.ext import CallbackContext
-from telegram.error import BadRequest, TelegramError, Unauthorized
-from telegram import (
-    ParseMode,
-    Update,
-    Chat,
-    User,
-    MessageEntity,
-    InlineKeyboardMarkup,
-    InlineKeyboardButton,
-    ChatAction,
-)
+
 import innexiaBot.modules.sql.feds_sql as sql
 from innexiaBot import (
     EVENT_LOGS,
@@ -37,13 +26,19 @@ from innexiaBot.modules.helper_funcs.extraction import (
     extract_user_fban,
 )
 from innexiaBot.modules.helper_funcs.string_handling import markdown_parser
-
-import innexiaBot.modules.sql.feds_sql as sql
-
-from innexiaBot.modules.helper_funcs.alternate import (
-    send_message,
-    typing_action,
-    send_action,
+from telegram import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    MessageEntity,
+    ParseMode,
+    Update,
+)
+from telegram.error import BadRequest, TelegramError, Unauthorized
+from telegram.ext import (
+    CallbackContext,
+    CallbackQueryHandler,
+    CommandHandler,
+    run_async,
 )
 from telegram.utils.helpers import mention_html, mention_markdown
 
