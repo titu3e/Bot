@@ -29,7 +29,7 @@ def gs(chat_id: Union[int, str], string: str) -> str:
     return get_string(lang, string)
 
 
-@run_async
+@user_admin
 def set_lang(update: Update, _) -> None:
     chat = update.effective_chat
     msg = update.effective_message
