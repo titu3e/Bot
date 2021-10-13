@@ -1233,8 +1233,7 @@ def set_frules(update, context):
         update.effective_message.reply_text("Please write rules to set it up!")
 
 
-@typing_action
-@kigcmd(command='frules', pass_args=True)
+@run_async
 def get_frules(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     args = context.args
@@ -1257,8 +1256,7 @@ def get_frules(update, context):
     update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
 
-@typing_action
-@kigcmd(command='fbroadcast', pass_args=True)
+@run_async
 def fed_broadcast(update, context):
     msg = update.effective_message  # type: Optional[Message]
     user = update.effective_user  # type: Optional[User]
@@ -1317,8 +1315,7 @@ def fed_broadcast(update, context):
         update.effective_message.reply_text(send_text)
 
 
-@send_action(ChatAction.UPLOAD_DOCUMENT)
-@kigcmd(command='fbanlist', pass_args=True, pass_chat_data=True)
+@run_async
 def fed_ban_list(update, context):  # sourcery no-metrics
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
