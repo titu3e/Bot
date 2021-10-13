@@ -7,7 +7,6 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from innexiaBot import dispatcher
 import innexiaBot.modules.sql.language_sql as sql
 from innexiaBot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
-from innexiaBot.langs import get_string, get_languages, get_language
 
 
 
