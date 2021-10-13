@@ -2323,7 +2323,7 @@ def get_chat(chat_id, chat_data):
 
 __mod_name__ = "Federations"
 
-from tg_bot.modules.language import gs
+from innexiaBot.modules.language import gs
 
 def fed_owner_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
