@@ -54,7 +54,7 @@ def set_lang(update: Update, _) -> None:
     msg.reply_text(msg_text, reply_markup=InlineKeyboardMarkup(keyb))
 
 
-@run_async
+@user_admin_no_reply
 def lang_button(update: Update, _) -> None:
     query = update.callback_query
     chat = update.effective_chat
