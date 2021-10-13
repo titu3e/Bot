@@ -2346,126 +2346,60 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
-@run_async
+__mod_name__ = "Federations"
+
+
 def fed_owner_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
-        """*👑 Fed Owner Only:*
- • `/newfed <fed_name>`*:* Creates a Federation, One allowed per user
- • `/renamefed <fed_id> <new_fed_name>`*:* Renames the fed id to a new name
- • `/delfed <fed_id>`*:* Delete a Federation, and any information related to it. Will not cancel blocked users
- • `/fpromote <user>`*:* Assigns the user as a federation admin. Enables all commands for the user under `Fed Admins`
- • `/fdemote <user>`*:* Drops the User from the admin Federation to a normal User
- • `/subfed <fed_id>`*:* Subscribes to a given fed ID, bans from that subscribed fed will also happen in your fed
- • `/unsubfed <fed_id>`*:* Unsubscribes to a given fed ID
- • `/setfedlog <fed_id>`*:* Sets the group as a fed log report base for the federation
- • `/unsetfedlog <fed_id>`*:* Removed the group as a fed log report base for the federation
- • `/fbroadcast <message>`*:* Broadcasts a messages to all groups that have joined your fed
- • `/fedsubs`*:* Shows the feds your group is subscribed to `(broken rn)`""",
+        gs(update.effective_chat.id, "FED_OWNER_HELP"),
         parse_mode=ParseMode.MARKDOWN,
     )
 
 
-@run_async
 def fed_admin_help(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
-        """*🔱 Fed Admins:*
- • `/fban <user> <reason>`*:* Fed bans a user
- • `/unfban <user> <reason>`*:* Removes a user from a fed ban
- • `/fedinfo <fed_id>`*:* Information about the specified Federation
- • `/joinfed <fed_id>`*:* Join the current chat to the Federation. Only chat owners can do this. Every chat can only be in one Federation
- • `/leavefed <fed_id>`*:* Leave the Federation given. Only chat owners can do this
- • `/setfrules <rules>`*:* Arrange Federation rules
- • `/fedadmins`*:* Show Federation admin
- • `/fbanlist`*:* Displays all users who are victimized at the Federation at this time
- • `/fedchats`*:* Get all the chats that are connected in the Federation
- • `/chatfed `*:* See the Federation in the current chat\n""",
+        gs(update.effective_chat.id, "FED_ADMIN_HELP"),
+        parse_mode=ParseMode.MARKDOWN,
+    )
+
+
+
+def fed_user_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(
+        gs(update.effective_chat.id, "FED_USER_HELP"),
         parse_mode=ParseMode.MARKDOWN,
     )
 
 
 @run_async
-def fed_user_help(update: Update, context: CallbackContext):
-    update.effective_message.reply_text(
-        """*🎩 Any user:*
- • `/fbanstat`*:* Shows if you/or the user you are replying to or their username is fbanned somewhere or not
- • `/fednotif <on/off>`*:* Federation settings not in PM when there are users who are fbaned/unfbanned
- • `/frules`*:* See Federation regulations\n""",
+def fed_help(update: Update, context: CallbackContext):
+    query = update.callback_query
+    bot = context.bot
+    help_info = query.data.split("fed_help_")[1]
+    if help_info == "owner":
+        help_text = gs(update.effective_chat.id, "FED_OWNER_HELP")
+    elif help_info == "admin":
+        help_text = gs(update.effective_chat.id, "FED_ADMIN_HELP")
+    elif help_info == "user":
+        help_text = gs(update.effective_chat.id, "FED_USER_HELP") 
+    query.message.edit_text(
+        text=help_text,
         parse_mode=ParseMode.MARKDOWN,
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text="Back", callback_data=f"help_module({__mod_name__.lower()})"),
+            InlineKeyboardButton(text='Report Error', url='https://t.me/YorkTownEagleUnion')]]
+        ),
     )
+    bot.answer_callback_query(query.id)
 
 
-__mod_name__ = "Feds"
-
-__help__ = """
-Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts.
-But then you have many groups, and you don't want this spammer to be in one of your groups - how can you deal? Do you have to manually block it, in all your groups?\n
-*No longer!* With Federation, you can make a ban in one chat overlap with all other chats.\n
-You can even designate federation admins, so your trusted admin can ban all the spammers from chats you want to protect.\n
-*Commands:*\n
-Feds are now divided into 3 sections for your ease. 
-❍ /fedownerhelp*:* Provides help for fed creation and owner only commands
-❍ /fedadminhelp*:* Provides help for fed administration commands
-❍ /feduserhelp*:* Provides help for commands anyone can use
-"""
-
-NEW_FED_HANDLER = CommandHandler("newfed", new_fed)
-DEL_FED_HANDLER = CommandHandler("delfed", del_fed)
-RENAME_FED = CommandHandler("renamefed", rename_fed)
-JOIN_FED_HANDLER = CommandHandler("joinfed", join_fed)
-LEAVE_FED_HANDLER = CommandHandler("leavefed", leave_fed)
-PROMOTE_FED_HANDLER = CommandHandler("fpromote", user_join_fed)
-DEMOTE_FED_HANDLER = CommandHandler("fdemote", user_demote_fed)
-INFO_FED_HANDLER = CommandHandler("fedinfo", fed_info)
-BAN_FED_HANDLER = DisableAbleCommandHandler("fban", fed_ban)
-UN_BAN_FED_HANDLER = CommandHandler("unfban", unfban)
-FED_BROADCAST_HANDLER = CommandHandler("fbroadcast", fed_broadcast)
-FED_SET_RULES_HANDLER = CommandHandler("setfrules", set_frules)
-FED_GET_RULES_HANDLER = CommandHandler("frules", get_frules)
-FED_CHAT_HANDLER = CommandHandler("chatfed", fed_chat)
-FED_ADMIN_HANDLER = CommandHandler("fedadmins", fed_admin)
-FED_USERBAN_HANDLER = CommandHandler("fbanlist", fed_ban_list)
-FED_NOTIF_HANDLER = CommandHandler("fednotif", fed_notif)
-FED_CHATLIST_HANDLER = CommandHandler("fedchats", fed_chats)
-FED_IMPORTBAN_HANDLER = CommandHandler("importfbans", fed_import_bans)
-FEDSTAT_USER = DisableAbleCommandHandler(["fedstat", "fbanstat"], fed_stat_user)
-SET_FED_LOG = CommandHandler("setfedlog", set_fed_log)
-UNSET_FED_LOG = CommandHandler("unsetfedlog", unset_fed_log)
-SUBS_FED = CommandHandler("subfed", subs_feds)
-UNSUBS_FED = CommandHandler("unsubfed", unsubs_feds)
-MY_SUB_FED = CommandHandler("fedsubs", get_myfedsubs)
-MY_FEDS_LIST = CommandHandler("myfeds", get_myfeds_list)
-DELETEBTN_FED_HANDLER = CallbackQueryHandler(del_fed_button, pattern=r"rmfed_")
-FED_OWNER_HELP_HANDLER = CommandHandler("fedownerhelp", fed_owner_help)
-FED_ADMIN_HELP_HANDLER = CommandHandler("fedadminhelp", fed_admin_help)
-FED_USER_HELP_HANDLER = CommandHandler("feduserhelp", fed_user_help)
-
-dispatcher.add_handler(NEW_FED_HANDLER)
-dispatcher.add_handler(DEL_FED_HANDLER)
-dispatcher.add_handler(RENAME_FED)
-dispatcher.add_handler(JOIN_FED_HANDLER)
-dispatcher.add_handler(LEAVE_FED_HANDLER)
-dispatcher.add_handler(PROMOTE_FED_HANDLER)
-dispatcher.add_handler(DEMOTE_FED_HANDLER)
-dispatcher.add_handler(INFO_FED_HANDLER)
-dispatcher.add_handler(BAN_FED_HANDLER)
-dispatcher.add_handler(UN_BAN_FED_HANDLER)
-dispatcher.add_handler(FED_BROADCAST_HANDLER)
-dispatcher.add_handler(FED_SET_RULES_HANDLER)
-dispatcher.add_handler(FED_GET_RULES_HANDLER)
-dispatcher.add_handler(FED_CHAT_HANDLER)
-dispatcher.add_handler(FED_ADMIN_HANDLER)
-dispatcher.add_handler(FED_USERBAN_HANDLER)
-dispatcher.add_handler(FED_NOTIF_HANDLER)
-dispatcher.add_handler(FED_CHATLIST_HANDLER)
-# dispatcher.add_handler(FED_IMPORTBAN_HANDLER)
-dispatcher.add_handler(FEDSTAT_USER)
-dispatcher.add_handler(SET_FED_LOG)
-dispatcher.add_handler(UNSET_FED_LOG)
-dispatcher.add_handler(SUBS_FED)
-dispatcher.add_handler(UNSUBS_FED)
-dispatcher.add_handler(MY_SUB_FED)
-dispatcher.add_handler(MY_FEDS_LIST)
-dispatcher.add_handler(DELETEBTN_FED_HANDLER)
-dispatcher.add_handler(FED_OWNER_HELP_HANDLER)
-dispatcher.add_handler(FED_ADMIN_HELP_HANDLER)
-dispatcher.add_handler(FED_USER_HELP_HANDLER)
+def get_help(chat):
+    return [gs(chat, "feds_help"),
+    [
+        InlineKeyboardButton(text="Fedadmins", callback_data="fed_help_admin"),
+        InlineKeyboardButton(text="Fedowners", callback_data="fed_help_owner")
+    ],
+    [
+        InlineKeyboardButton(text="Users", callback_data="fed_help_user")
+    ],
+]
