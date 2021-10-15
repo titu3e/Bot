@@ -75,7 +75,7 @@ def get_readable_time(seconds: int) -> str:
 INNEXIA_IMG = "https://telegra.ph/file/65b106d1b76af6dba124f.jpg"
 
 PM_START_TEXT = """
-ʜᴇʟʟᴏ ❤️‍🔥 ɪ ᴀᴍ [Phoeni✘](https://telegra.ph/file/92e864962ae18f73c6b6e.jpg) ᴘᴏᴡᴇʀꜰᴜʟʟ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
+ʜᴇʟʟᴏ ❤️‍🔥 ɪ ᴀᴍ [Phoeni✘](https://telegra.ph/file/caad519178dc7716c3162.jpg) ᴘᴏᴡᴇʀꜰᴜʟʟ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
 ᴛᴏ ʜᴇʟᴘ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀᴅᴍɪɴs ᴡɪᴛʜ ᴍʏ sᴜᴘᴇʀ ᴀᴅᴠᴀɴᴄᴇᴅ ғᴇᴀᴛᴜʀᴇs,
 I can do a variety of things, most common of em are:
 - Restrict users with ban permissions.
@@ -119,7 +119,7 @@ Main commands available:
 • /settings:
    - in PM: will send you your settings for all supported modules.
    - in a group: will redirect you to pm, with all that chat's settings.
- Click on the buttons below to get documentation about specific modules![Phoeni✘](https://telegra.ph/file/7d36b1edf06366e5be33a.mp4)..)"""
+ Click on the buttons below to get documentation about specific modules of [Phoeni✘](https://telegra.ph/file/7d36b1edf06366e5be33a.mp4)..)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
