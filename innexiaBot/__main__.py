@@ -76,8 +76,14 @@ INNEXIA_IMG = "https://telegra.ph/file/65b106d1b76af6dba124f.jpg"
 
 PM_START_TEXT = """
 ʜᴇʟʟᴏ ❤️‍🔥 ɪ ᴀᴍ [Phoeni✘](https://telegra.ph/file/92e864962ae18f73c6b6e.jpg) ᴘᴏᴡᴇʀꜰᴜʟʟ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
-ᴛᴏ ʜᴇʟᴘ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀᴅᴍɪɴs ᴡɪᴛʜ ᴍʏ sᴜᴘᴇʀ ᴀᴅᴠᴀɴᴄᴇᴅ ғᴇᴀᴛᴜʀᴇs, ғᴏʀ ʀᴇᴘᴏʀᴛɪɴɢ ᴀɴʏ ɪssᴜᴇs
-ʀᴇɢᴀʀᴅɪɴɢ ᴍᴇ ᴋɪɴᴅʟʏ ʀᴇᴘᴏʀᴛ ɪɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ sᴏ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀs ᴄᴀɴ ғɪx ᴍᴇ ᴏᴜᴛ ғᴏʀ ʏᴏᴜʀ ɴᴇᴇᴅs.
+ᴛᴏ ʜᴇʟᴘ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀᴅᴍɪɴs ᴡɪᴛʜ ᴍʏ sᴜᴘᴇʀ ᴀᴅᴠᴀɴᴄᴇᴅ ғᴇᴀᴛᴜʀᴇs,
+I can do a variety of things, most common of em are:
+- Restrict users with ban permissions.
+- Greet users with media + text and buttons, with proper formatting.
+- Restrict users who flood your chat using my anti-flood module.
+- Warn users according to the options set and restrict em accordingly.
+- Save notes and filters with proper formatting and reply markup.
+ғᴏʀ ʀᴇᴘᴏʀᴛɪɴɢ ᴀɴʏ ɪssᴜᴇs ʀᴇɢᴀʀᴅɪɴɢ ᴍᴇ ᴋɪɴᴅʟʏ ʀᴇᴘᴏʀᴛ ɪɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ sᴏ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀs ᴄᴀɴ ғɪx ᴍᴇ ᴏᴜᴛ ғᴏʀ ʏᴏᴜʀ ɴᴇᴇᴅs.
 """ 
 
 buttons = [
@@ -86,9 +92,9 @@ buttons = [
             text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/phoenix_empire"),
+        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url=f"https://t.me/phoenix_empire"),
         InlineKeyboardButton(
-            text=" ɴᴇᴛᴡᴏʀᴋ ", url=f"https://t.me/Phoenix_Empire/28"
+            text=" Nᴇᴛᴡᴏʀᴋ ", url=f"https://t.me/Phoenix_Empire/28"
         ),
     ],
     [
@@ -105,8 +111,15 @@ buttons = [
 
 HELP_STRINGS = """
 **SETTINGS**
-Click on the buttons below to get documentation about specific modules of [Phoeni✘](https://telegra.ph/file/7d36b1edf06366e5be33a.mp4)..)"""
-
+I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of
+the things I can help you with.
+Main commands available:
+ • /start: Starts me, can be used to check I'm alive or not.
+ • /help: PM's you this message.
+• /settings:
+   - in PM: will send you your settings for all supported modules.
+   - in a group: will redirect you to pm, with all that chat's settings.
+ Click on the buttons below to get documentation about specific modules![Phoeni✘](https://telegra.ph/file/7d36b1edf06366e5be33a.mp4)..)"""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
@@ -404,7 +417,7 @@ def innexia_about_callback(update, context):
                     InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="innexia_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="innexia_support"),
+                    InlineKeyboardButton(text="Oᴛʜᴇʀ", callback_data="innexia_support"),
                     InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="innexia_credit"),
                  ],
                  [
@@ -445,7 +458,7 @@ def innexia_about_callback(update, context):
     elif query.data == "innexia_support":
         query.message.edit_text(
             text="* Phoeni✘'s other chats and channels*"
-            "\nJoin Quotes Channel/Fed/Spam Group/CFC Hub",
+            "\nFeel free to join",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -467,7 +480,7 @@ def innexia_about_callback(update, context):
     elif query.data == "innexia_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR Phoeni✘ Collosus DEV'S</b>\n"
-            f"\nHere Some Developers Helping in Making The Phoeni✘ Collosus Bot",
+            f"\nThese are the legends helped to built Phoeni✘ Collosus bot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
