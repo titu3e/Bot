@@ -467,7 +467,7 @@ def innexia_about_callback(update, context):
                     InlineKeyboardButton(text="Fᴇᴅ", url="t.me/PHOENIX_F3D_V1"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴄғᴄ ʜᴜʙ", url="t.me/cFcHuB"),
+                    InlineKeyboardButton(text="ᴄғᴄ ʜᴜʙ", url="t.me/CFC_HUB"),
                     InlineKeyboardButton(text="sᴘᴀᴍ ɢʀᴏᴜᴘ", url="https://t.me/PHOENIXPIRATES"),
                  ],
                  [
