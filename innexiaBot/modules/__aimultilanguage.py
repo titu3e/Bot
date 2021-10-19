@@ -53,9 +53,9 @@ url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 from google_trans_new import google_translator
 from pyrogram import filters
 
-from AmeliaRobot.helper_extra.aichat import add_chat, get_session, remove_chat
-from AmeliaRobot.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from AmeliaRobot import pbot as Amelia
+from innexiaBot.helper_extra.aichat import add_chat, get_session, remove_chat
+from innexiaBot.pyrogramee.pluginshelper import admins_only, edit_or_reply
+from innexiaBot import pbot as Amelia
 
 translator = google_translator()
 
@@ -63,13 +63,13 @@ translator = google_translator()
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
-BOT_ID = 1793109179
-amelia_chats = []
+BOT_ID = 1904394896
+innexia_chats = []
 en_chats = []
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 
-@Amelia.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
+@innexia.on_message(filters.command("chatbot") & ~filters.edited & ~filters.bot)
 @admins_only
 async def hmm(_, message):
     global amelia_chats
@@ -113,7 +113,7 @@ async def hmm(_, message):
         )
 
 
-@Amelia.on_message(
+@innexia.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -126,8 +126,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("amelia", "Aco")
-        test = test.replace("amelia", "Aco")
+        test = test.replace("Phoenix", "Aco")
+        test = test.replace("Phoenix", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -142,12 +142,12 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "amelia")
+        result = result.replace("Aco", "Phoenix")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
         try:
-            await amelia.send_chat_action(message.chat.id, "typing")
+            await innexiaBot.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError as e:
             print(e)
@@ -188,8 +188,8 @@ async def hmm(client, message):
         # test = emoji.demojize(test.strip())
 
         # Kang with the credits bitches @InukaASiTH
-        test = test.replace("amelia", "Aco")
-        test = test.replace("amelia", "Aco")
+        test = test.replace("Phoenix", "Aco")
+        test = test.replace("Phoenix", "Aco")
         querystring = {
             "bid": "178",
             "key": "sX5A2PcYZbsN5EY6",
@@ -204,7 +204,7 @@ async def hmm(client, message):
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
-        result = result.replace("Aco", "amelia")
+        result = result.replace("Aco", "Phoenix")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
         pro = result
@@ -217,7 +217,7 @@ async def hmm(client, message):
             print(e)
 
 
-@Amelia.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
+@innexia.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
 async def inuka(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -287,7 +287,7 @@ async def inuka(client, message):
         print(e)
 
 
-@Amelia.on_message(
+@innexia.on_message(
     filters.regex("Phoenix|Phoenix|PHOENIX_EMPIRE|hello|hi")
     & ~filters.bot
     & ~filters.via_bot
