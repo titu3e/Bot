@@ -279,22 +279,22 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThe HUNTER SKILL of this person is 'INFINITE'."
+        text += "\n\nThe Disaster level of this person is 'God'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is CO-OWNER of '🍁SOLO•GUILD🍁'."
+        text += "\n\nThe Disaster level of this person is 'King'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe HUNTER SKILL of this person is 'S-RANK'."
+        text += "\n\nThe HUNTER SKILL of this person is 'S-RANK Dragon'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe HUNTER SKILL of this person is 'A-RANK'."
+        text += "\n\nThe HUNTER SKILL of this person is 'A-RANK Demon'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe HUNTER SKILL of this person is 'B-RANK'."
+        text += "\n\nThe HUNTER SKILL of this person is 'B-RANK Tiger'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe HUNTER SKILL of this person is 'C-RANK'."
+        text += "\n\nThe HUNTER SKILL of this person is 'C-RANK Wolves'."
         disaster_level_present = True
 
     if disaster_level_present:
@@ -502,7 +502,7 @@ def __user_info__(user_id):
 __help__ = """
 *Away from group*
  ❍ /afk <reason>*:* mark yourself as AFK(away from keyboard).
- ❍ brb <reason>*:* same as the afk command - but not a command.
+ ❍ /brb <reason>*:* same as the afk command - but not a command.
 When marked as AFK, any mentions will be replied to with a message to say you're not available!
 *ID:*
  ❍ /id*:* get the current group id. If used by replying to a message, gets that user's id.
@@ -523,7 +523,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
  ❍ /info*:* get information about a user. 
  
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/OnePunchUpdates/192)
+ Come and see [HP System explained](https://t.me/Phoenix_Empire/107)
 """
 
 
