@@ -379,9 +379,6 @@ def innexia_about_callback(update, context):
                         InlineKeyboardButton(
                             text=" Uᴘᴅᴀᴛᴇ ", url="t.me/Phoenix_Empire"
                         ),
-                        InlineKeyboardButton(
-                            text=" Nᴇᴛᴡᴏʀᴋ ", url="https://t.me/Phoenix_Empire/28"), 
-                        ),
                      ],
                      [ 
                         InlineKeyboardButton(
