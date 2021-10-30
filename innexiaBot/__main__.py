@@ -113,7 +113,7 @@ Main commands available:
 • /settings:
    - in PM: will send you your settings for all supported modules.
    - in a group: will redirect you to pm, with all that chat's settings.
- Click on the buttons below to get documentation about specific modules of [Phoeni✘](https://telegra.ph/file/7d36b1edf06366e5be33a.mp4)..)"""
+ Click on the buttons below to get documentation about specific modules of Phoeni✘."""
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
