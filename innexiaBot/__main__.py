@@ -366,7 +366,6 @@ def innexia_about_callback(update, context):
         query.message.edit_text(
             text=""" Phoeni✘ - A bot to manage your groups with additional features!
             \nHere's the basic help regarding use of Phoeni✘. 
-            \nHere's the [Repository](https://github.com/heyaaman/KazukoBot)
             \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
             \nReport error/bugs click the Button""",
             parse_mode=ParseMode.MARKDOWN,
@@ -375,13 +374,18 @@ def innexia_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text=" sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ ", url="t.me/CFC_BOT_support"
+                            text=" Sᴜᴘᴘᴏʀᴛ ", url="t.me/CFC_BOT_support"
                         ),
                         InlineKeyboardButton(
-                            text=" ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ", url="t.me/Phoenix_Empire"
+                            text=" Uᴘᴅᴀᴛᴇ ", url="t.me/Phoenix_Empire"
                         ),
                         InlineKeyboardButton(
-                            text=" Nᴇᴛᴡᴏʀᴋ ", url="https://t.me/Phoenix_Empire/28"),                 
+                            text=" Nᴇᴛᴡᴏʀᴋ ", url="https://t.me/Phoenix_Empire/28"), 
+                        ),
+                     ],
+                     [ 
+                        InlineKeyboardButton(
+                            text=" Sᴏᴜʀᴄᴇ Cᴏᴅᴇ ", url="https://github.com/heyaaman/KazukoBot"),          
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="innexia_back")],
                 ]
