@@ -88,21 +88,15 @@ I can do a variety of things, most common of em are:
 
 buttons = [
     [
-        InlineKeyboardButton(text=" ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ", url="http://t.me/PhoenixWarmedbot?startgroup=true"),
-    ],
-    [
-        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url=f"https://t.me/phoenix_empire"),
+        InlineKeyboardButton(text=" Aʙᴏᴜᴛ & Sᴜᴘᴘᴏʀᴛ", callback_data="innexia_"),
         InlineKeyboardButton(
-            text=" Nᴇᴛᴡᴏʀᴋ ", url=f"https://t.me/Phoenix_Empire/28"
+            text="Bᴀꜱɪᴄ Hᴇʟᴘ ", callback_data="innexia_basichelp" ),
+      ],
+    [
+       InlineKeyboardButton(text=" Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ", url="http://t.me/PhoenixWarmedbot?startgroup=true",
         ),
     ],
-    [
-        InlineKeyboardButton(text=" Aʙᴏᴜᴛ", callback_data="innexia_"),
-        InlineKeyboardButton(
-            text="Bᴀꜱɪᴄ Hᴇʟᴘ ", callback_data="innexia_basichelp"
-        ),
-    ],
-    [
+    [ 
         InlineKeyboardButton(
             text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ", callback_data="help_back"),  
     ],
@@ -371,8 +365,8 @@ def innexia_about_callback(update, context):
     if query.data == "innexia_":
         query.message.edit_text(
             text=""" Phoeni✘ - A bot to manage your groups with additional features!
-            \nHere's the basic help regarding use of Phoeni✘.
-            
+            \nHere's the basic help regarding use of Phoeni✘. 
+            \nHere's the [Repository](https://github.com/heyaaman/KazukoBot)
             \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
             \nReport error/bugs click the Button""",
             parse_mode=ParseMode.MARKDOWN,
@@ -386,6 +380,8 @@ def innexia_about_callback(update, context):
                         InlineKeyboardButton(
                             text=" ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ", url="t.me/Phoenix_Empire"
                         ),
+                        InlineKeyboardButton(
+                            text=" Nᴇᴛᴡᴏʀᴋ ", url="https://t.me/Phoenix_Empire/28"),                 
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="innexia_back")],
                 ]
