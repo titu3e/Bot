@@ -88,8 +88,7 @@ I can do a variety of things, most common of em are:
 
 buttons = [
     [
-        InlineKeyboardButton(
-            text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ", callback_data="help_back"),
+        InlineKeyboardButton(text=" ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ", url="http://t.me/PhoenixWarmedbot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url=f"https://t.me/phoenix_empire"),
@@ -104,7 +103,8 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text=" ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ", url="http://t.me/PhoenixWarmedbot?startgroup=true"),
+        InlineKeyboardButton(
+            text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ", callback_data="help_back"),  
     ],
 ]
 
