@@ -1,49 +1,42 @@
-import threading
 from sqlalchemy import Column, String
+
 from innexiaBot.modules.sql import BASE, SESSION
-#   |----------------------------------|
-#   |  Test Module by @EverythingSuckz |
-#   |        Kang with Credits         |
-#   |----------------------------------|
-class NSFWChats(BASE):
-    __tablename__ = "nsfw_chats"
+
+
+class Nsfwatch(BASE):
+    __tablename__ = "nsfwatch"
     chat_id = Column(String(14), primary_key=True)
 
     def __init__(self, chat_id):
         self.chat_id = chat_id
 
-NSFWChats.__table__.create(checkfirst=True)
-INSERTION_LOCK = threading.RLock()
+
+Nsfwatch.__table__.create(checkfirst=True)
 
 
-def is_nsfw(chat_id):
-    try:
-        chat = SESSION.query(NSFWChats).get(str(chat_id))
-        if chat:
-            return True
-        else:
-            return False
-    finally:
-        SESSION.close()
+def add_nsfwatch(chat_id: str):
+    nsfws = Nsfwatch(str(chat_id))
+    SESSION.add(nsfws)
+    SESSION.commit()
 
-def set_nsfw(chat_id):
-    with INSERTION_LOCK:
-        nsfwchat = SESSION.query(NSFWChats).get(str(chat_id))
-        if not nsfwchat:
-            nsfwchat = NSFWChats(str(chat_id))
-        SESSION.add(nsfwchat)
-        SESSION.commit()
 
-def rem_nsfw(chat_id):
-    with INSERTION_LOCK:
-        nsfwchat = SESSION.query(NSFWChats).get(str(chat_id))
-        if nsfwchat:
-            SESSION.delete(nsfwchat)
+def rmnsfwatch(chat_id: str):
+    nsfwm = SESSION.query(Nsfwatch).get(str(chat_id))
+    if nsfwm:
+        SESSION.delete(nsfwm)
         SESSION.commit()
 
 
-def get_all_nsfw_chats():
+def get_all_nsfw_enabled_chat():
+    stark = SESSION.query(Nsfwatch).all()
+    SESSION.close()
+    return stark
+
+
+def is_nsfwatch_indb(chat_id: str):
     try:
-        return SESSION.query(NSFWChats.chat_id).all()
+        s__ = SESSION.query(Nsfwatch).get(str(chat_id))
+        if s__:
+            return str(s__.chat_id)
     finally:
         SESSION.close()
