@@ -72,18 +72,18 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-INNEXIA_IMG = "https://telegra.ph/file/65b106d1b76af6dba124f.jpg"
+INNEXIA_IMG = "https://telegra.ph/file/aaa7d094160ddcaccac5a.jpg"
 
 PM_START_TEXT = """
-ʜᴇʟʟᴏ ❤️‍🔥 ɪ ᴀᴍ [Phoeni✘](https://telegra.ph/file/caad519178dc7716c3162.jpg) ᴘᴏᴡᴇʀꜰᴜʟʟ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
+ʜᴇʟʟᴏ ❤️‍🔥 ɪ ᴀᴍ [Thunder GoHelp](t.mr/Thurber_GoHelp_Robot) ᴘᴏᴡᴇʀꜰᴜʟʟ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
 ᴛᴏ ʜᴇʟᴘ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀᴅᴍɪɴs ᴡɪᴛʜ ᴍʏ sᴜᴘᴇʀ ᴀᴅᴠᴀɴᴄᴇᴅ ғᴇᴀᴛᴜʀᴇs,
-I can do a variety of things, most common of em are:
+I can do a variety of things, most common of them are:
 - Restrict users with ban permissions.
 - Greet users with media + text and buttons, with proper formatting.
 - Restrict users who flood your chat using my anti-flood module.
 - Warn users according to the options set and restrict em accordingly.
 - Save notes and filters with proper formatting and reply markup.
-ғᴏʀ ʀᴇᴘᴏʀᴛɪɴɢ ᴀɴʏ ɪssᴜᴇs ʀᴇɢᴀʀᴅɪɴɢ ᴍᴇ ᴋɪɴᴅʟʏ ʀᴇᴘᴏʀᴛ ɪɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ sᴏ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀs ᴄᴀɴ ғɪx ᴍᴇ ᴏᴜᴛ ғᴏʀ ʏᴏᴜʀ ɴᴇᴇᴅs.
+ғᴏʀ ʀᴇᴘᴏʀᴛɪɴɢ ᴀɴʏ ɪssᴜᴇs ʀᴇɢᴀʀᴅɪɴɢ ᴍᴇ ᴋɪɴᴅʟʏ ʀᴇᴘᴏʀᴛ ɪɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ sᴏ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴄᴀɴ ғɪx ᴍᴇ ᴏᴜᴛ ғᴏʀ ʏᴏᴜʀ ɴᴇᴇᴅs.
 """ 
 
 buttons = [
@@ -93,7 +93,7 @@ buttons = [
             text="Bᴀꜱɪᴄ Hᴇʟᴘ ", callback_data="innexia_basichelp" ),
       ],
     [
-       InlineKeyboardButton(text=" Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ", url="http://t.me/PhoenixWarmedbot?startgroup=true",
+       InlineKeyboardButton(text=" Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ", url="http://t.me/Thurber_GoHelp_Robot?startgroup=true",
         ),
     ],
     [ 
@@ -117,7 +117,7 @@ Main commands available:
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- @heyaaman's"""
+ @Sungjinwooarc 's"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -364,8 +364,8 @@ def innexia_about_callback(update, context):
     query = update.callback_query
     if query.data == "innexia_":
         query.message.edit_text(
-            text=""" Phoeni✘ - A bot to manage your groups with additional features!
-            \nHere's the basic help regarding use of Phoeni✘. 
+            text=""" Thurber_GoHelp_Robot  - A bot to manage your groups with additional features!
+            \nHere's the basic help regarding use of Thurber_GoHelp_Robot . 
             \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
             \nReport error/bugs click the Button""",
             parse_mode=ParseMode.MARKDOWN,
@@ -374,15 +374,15 @@ def innexia_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text=" Sᴜᴘᴘᴏʀᴛ ", url="t.me/CFC_BOT_support"
+                            text=" Sᴜᴘᴘᴏʀᴛ ", url="https://t.me/thundergotechnology"
                         ),
                         InlineKeyboardButton(
-                            text=" Uᴘᴅᴀᴛᴇ ", url="t.me/Phoenix_Empire"
+                            text=" Uᴘᴅᴀᴛᴇ ", url="https://t.me/thundergotechnology"
                         ),
                      ],
                      [ 
                         InlineKeyboardButton(
-                            text=" Sᴏᴜʀᴄᴇ Cᴏᴅᴇ ", url="https://github.com/heyaaman/KazukoBot"),          
+                            text=" Dev ", url="t.me/sungjinwooarc"),          
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="innexia_back")],
                 ]
@@ -399,10 +399,10 @@ def innexia_about_callback(update, context):
 
     elif query.data == "innexia_basichelp":
         query.message.edit_text(
-            text=f"*Here's basic Help regarding Phoeni✘* *How to use Me?*"
+            text=f"*Here's basic Help regarding Thunder GoHelp* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n• After adding promote me manually with full rights for faster experience.\n"
-            f"\n• Than send `/admincache@PhoenixWarmedbot` in that chat to refresh admin list in My database.\n"
+            f"\n• Than send `/admincache@Thurber_GoHelp_Robot` in that chat to refresh admin list in My database.\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -427,7 +427,7 @@ def innexia_about_callback(update, context):
     elif query.data == "innexia_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
-            f"\nCongragulations, Phoeni✘ now ready to manage your group."
+            f"\nCongragulations, Thunder GoHelp now ready to manage your group."
             f"\n\n*Admin Tools*"
             f"\nBasic Admin tools help you to protect and powerup your group."
             f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -454,18 +454,18 @@ def innexia_about_callback(update, context):
         )
     elif query.data == "innexia_support":
         query.message.edit_text(
-            text="* Phoeni✘'s other chats and channels*"
+            text="* Thurber_GoHelp_Robot's other chats and channels*"
             "\nFeel free to join",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ǫᴜᴏᴛᴇs ᴄʜᴀɴɴᴇʟ", url="t.me/aboutusso"),
-                    InlineKeyboardButton(text="Fᴇᴅ", url="t.me/PHOENIX_F3D_V1"),
+                    InlineKeyboardButton(text="TEch Group", url="https://t.me/thundergotechnology"),
+                    InlineKeyboardButton(text="Normal Chat", url="https://t.me/Thunder_GoHelp"),
                  ],
                  [
-                    InlineKeyboardButton(text="ᴄғᴄ ʜᴜʙ", url="t.me/CFC_HUB"),
-                    InlineKeyboardButton(text="sᴘᴀᴍ ɢʀᴏᴜᴘ", url="https://t.me/PHOENIXPIRATES"),
+                    InlineKeyboardButton(text="Dev", url="t.me/sungjinwooarc"),
+                    InlineKeyboardButton(text="sᴘᴀᴍ ɢʀᴏᴜᴘ", url="https://t.me/Thunder_GoHelp"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
@@ -476,18 +476,18 @@ def innexia_about_callback(update, context):
         )
     elif query.data == "innexia_credit":
         query.message.edit_text(
-            text=f"<b> CREDIT FOR Phoeni✘ Collosus DEV'S</b>\n"
-            f"\nThese are the legends helped to built Phoeni✘ Collosus bot",
+            text=f"<b> CREDIT FOR Thunder GoHelp DEV'S</b>\n"
+            f"\nThese are the legends helped to built Thunder GoHelp bot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="ʜᴇʏᴀᴀᴍᴀɴ", url="t.me/heyaaman"),
-                    InlineKeyboardButton(text="ᴘʜᴏᴇɴɪxᴡᴀʀᴍᴇᴅ", url="t.me/PhoenixWarmed"),
+                    InlineKeyboardButton(text="Sungjinwooarc", url="t.me/sungjinwooarc"),
+                    InlineKeyboardButton(text="Tanjiro Bot", url="t.me/Tanjiro_AIbot"),
                  ],
                  [
-                    InlineKeyboardButton(text="ɢᴜʀᴊᴀʀ", url="t.me/GURJAR_XD"),
-                    InlineKeyboardButton(text="ʙᴀᴢɪɢᴀʀ", url="https://t.me/BazigarYT"),
+                    InlineKeyboardButton(text="Manga Bot", url="t.me/manga_manhwa_Robot"),
+                    InlineKeyboardButton(text="Whisper bot", url="https://t.me/shadow_Whisper_Robot"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
@@ -503,8 +503,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi.. I'm *Phoeni✘*
-                 \nHere is the [](https://github.com/heyaaman/KazukoBot) .""",
+            text=""" Hi.. I'm *Thunder GoHelp*
+                 \nHere is the [Dev](t.me/sungjinwooarc)) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -757,7 +757,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1947924017 and DONATION_LINK:
+        if OWNER_ID != 1593338093 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
